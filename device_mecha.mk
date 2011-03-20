@@ -184,7 +184,8 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_mecha
+PRODUCT_BRAND := HTC
+PRODUCT_NAME := htc_mecha
 PRODUCT_DEVICE := mecha
 PRODUCT_MODEL := HTC ThunderBolt
 PRODUCT_MANUFACTURER := HTC
