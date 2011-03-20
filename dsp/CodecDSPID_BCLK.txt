@@ -1,0 +1,10 @@
+Original,/system/etc/soundimage/Sound_Original_BCLK.txt
+Original_SPK,/system/etc/soundimage/Sound_Original_SPK_BCLK.txt
+Original_Recording,/system/etc/soundimage/Sound_Original_Recording_BCLK.txt
+Recording,/system/etc/soundimage/Sound_Recording_BCLK.txt
+Original_Phone,/system/etc/soundimage/Sound_Original_BCLK.txt
+Original_Phone_REC,/system/etc/soundimage/Sound_Phone_Original_REC_BCLK.txt
+Original_Phone_SPK,/system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt
+Original_Phone_HP,/system/etc/soundimage/Sound_Phone_Original_HP_BCLK.txt
+
+

@@ -1,0 +1,26 @@
+Original,/system/etc/soundimage/Sound_Original.txt
+Original_SPK,/system/etc/soundimage/Sound_Original_SPK.txt
+Original_Recording,/system/etc/soundimage/Sound_Original_Recording.txt
+Recording,/system/etc/soundimage/Sound_Recording.txt
+Original_Phone,/system/etc/soundimage/Sound_Original.txt
+Original_Phone_REC,/system/etc/soundimage/Sound_Phone_Original_REC.txt
+Original_Phone_SPK,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
+Original_Phone_HP,/system/etc/soundimage/Sound_Phone_Original_HP.txt
+Srs_a_hp,/system/etc/soundimage/Sound_SRS_A_HP.txt
+Srs_a_spk,/system/etc/soundimage/Sound_SRS_A_SPK.txt
+Srs_v_hp,/system/etc/soundimage/Sound_SRS_V_HP.txt
+Srs_v_spk,/system/etc/soundimage/Sound_SRS_A_SPK.txt
+Bass Booster,/system/etc/soundimage/Sound_Bass_Booster.txt
+Blues,/system/etc/soundimage/Sound_Blues.txt
+Classical,/system/etc/soundimage/Sound_Classical.txt
+Country,/system/etc/soundimage/Sound_Country.txt
+Jazz,/system/etc/soundimage/Sound_Jazz.txt
+Latin,/system/etc/soundimage/Sound_Latin.txt
+New age,/system/etc/soundimage/Sound_New_Age.txt
+Piano,/system/etc/soundimage/Sound_Piano.txt
+Pop,/system/etc/soundimage/Sound_Pop.txt
+R&B,/system/etc/soundimage/Sound_R_B.txt
+Rock,/system/etc/soundimage/Sound_Rock.txt
+Treble Booster,/system/etc/soundimage/Sound_Treble_Booster.txt
+Vocal Booster,/system/etc/soundimage/Sound_Vocal_Booster.txt
+

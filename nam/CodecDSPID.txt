@@ -1,0 +1,26 @@
+DualMic_Phone,/system/etc/soundimage/Sound_Dualmic_MCLK.txt
+DualMic_Phone_EP,/system/etc/soundimage/Sound_Dualmic_EP_MCLK.txt
+DualMic_Phone_SPK,/system/etc/soundimage/Sound_Dualmic_SPK_MCLK.txt
+Original,/system/etc/soundimage/Sound_Original_MCLK.txt
+dolby_a_spk,/system/etc/soundimage/Sound_Dolby_A_SPK_MCLK.txt
+dolby_a_hp,/system/etc/soundimage/Sound_Dolby_A_HP_MCLK.txt
+dolby_v_spk,/system/etc/soundimage/Sound_Dolby_V_SPK_MCLK.txt
+dolby_v_hp,/system/etc/soundimage/Sound_Dolby_V_HP_MCLK.txt
+Srs_a_hp,/system/etc/soundimage/Sound_SRS_A_HP_MCLK.txt
+Srs_a_spk,/system/etc/soundimage/Sound_SRS_A_SPK_MCLK.txt
+Srs_v_hp,/system/etc/soundimage/Sound_SRS_V_HP_MCLK.txt
+Srs_v_spk,/system/etc/soundimage/Sound_SRS_V_SPK_MCLK.txt
+Bass Booster,/system/etc/soundimage/Sound_Bass_Booster_MCLK.txt
+Blues,/system/etc/soundimage/Sound_Blues_MCLK.txt
+Classical,/system/etc/soundimage/Sound_Classical_MCLK.txt
+Country,/system/etc/soundimage/Sound_Country_MCLK.txt
+Jazz,/system/etc/soundimage/Sound_Jazz_MCLK.txt
+Latin,/system/etc/soundimage/Sound_Latin_MCLK.txt
+New age,/system/etc/soundimage/Sound_New_Age_MCLK.txt
+Piano,/system/etc/soundimage/Sound_Piano_MCLK.txt
+Pop,/system/etc/soundimage/Sound_Pop_MCLK.txt
+R&B,/system/etc/soundimage/Sound_R_B_MCLK.txt
+Rock,/system/etc/soundimage/Sound_Rock_MCLK.txt
+Treble Booster,/system/etc/soundimage/Sound_Treble_Booster_MCLK.txt
+Vocal Booster,/system/etc/soundimage/Sound_Vocal_Booster_MCLK.txt
+Recording,/system/etc/soundimage/Sound_Original_MCLK.txt

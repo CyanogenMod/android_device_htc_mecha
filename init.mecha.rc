@@ -1,0 +1,164 @@
+on emmc
+
+    mkdir /system
+    mkdir /data 0771 system system
+    mkdir /cache 0770 system cache
+    mkdir /devlog 0700 root root
+	devwait emmc@system
+	# exec /system/bin/e2fsck_recvy -p emmc@system
+	mount ext3 emmc@system /system ro data=ordered
+    devwait emmc@userdata
+	exec /system/bin/e2fsck_recvy -p emmc@userdata
+	mount ext3 emmc@userdata /data nosuid nodev data=ordered
+    devwait emmc@cache
+	exec /system/bin/e2fsck_recvy -p emmc@cache
+	mount ext3 emmc@cache /cache nosuid nodev data=ordered
+    devwait emmc@devlog
+	exec /system/bin/e2fsck_recvy -p emmc@devlog
+	mount ext3 emmc@devlog /devlog nosuid nodev data=ordered
+
+on early-init
+    device mtd@misc 0460 radio diag
+
+on init
+    # double check the perms and set owner
+    chown root root /devlog
+    chmod 0700 /devlog
+
+on boot
+#+from QCT Fusion
+    mkdir /data/radio 0770 radio radio
+    chown radio system /sys/module/smd_rpcrouter/parameters/debug_mask
+    chown radio system /sys/module/rpcrouter_sdio_xprt/parameters/debug_mask
+#-from QCT Fusion
+
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+    # bluetooth power up/down interface
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660                /sys/class/rfkill/rfkill0/state
+
+	# for wireless modem
+	chown system system /sys/module/serial/parameters/modem_enabled
+	chown system system /dev/ttyHSUSB0
+	chown system system /dev/ttySA0
+	chown system system /dev/smd9
+
+# 9k modem
+    chown system system /sys/module/msm72k_udc/parameters/mdm_port_enabled
+    chown system system /sys/module/smsc251x/parameters/hub_enabled
+
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
+    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    socket wpa_eth0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd /system/bin/dhcpcd -ABKL eth0
+    disabled
+    oneshot
+
+# compass/accelerometer daemon
+service akmd /system/bin/akmd
+    user compass
+    group compass misc input
+
+# bugreport is triggered by the KEY_VOLUMEUP and BTN_VOLUMEDOWN keycodes
+service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
+    disabled
+    oneshot
+    keycodes 115 114
+
+#service hciattach /system/bin/brcm_patchram_plus --enable_hci --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
+
+# Make sure we startup btld before hcid
+# Set target address to emulator host loopback IF
+# Limit baudrate to 460800 to ensure reliable uart operation 
+#service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
+service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+# for USB internet sharing
+service udhcpd /system/bin/udhcpd
+	disabled
+	oneshot
+
+service netsharing_on /system/bin/netsharing net on
+	disabled
+	oneshot
+
+service netsharing_off /system/bin/netsharing net off
+	disabled
+	oneshot
+
+service netsharing_pass /system/bin/netsharing net_pass on
+	disabled
+	oneshot
+
+service srv_ser2net /system/bin/ser2net -n
+    disabled
+
+on property:service.ser2net.enable=1
+    start srv_ser2net
+
+on property:service.ser2net.enable=0
+    stop srv_ser2net
+
+service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
+    user root
+    disabled
+
+#+from QCT Fusion
+service qmuxd /system/bin/qmuxd
+
+service netmgrd /system/bin/netmgrd
+
+on property:ro.use_data_netmgrd=false
+    # netmgr not supported on specific target
+    stop netmgrd
+
+service qcril-daemon /system/bin/qcrild
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    user root
+    group radio cache inet misc audio qcom_oncrpc diag system
+
+on property:ro.data.large_tcp_window_size=true
+    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  1
+
+#-from QCT Fusion
+
+service modem /system/xbin/wireless_modem
+	user system
+	group system
+	disabled
+
+on property:service.modem.enable=1
+	start modem
+
+on property:service.modem.enable=0
+	stop modem
+
+on property:ro.emmc=1
+    start rmt_storage
+
+service dmagent /system/bin/dmagent -N -P19 -SA -VSY
+    socket dmagent stream 660 root radio
+    user root
+    group radio cache inet misc
+
