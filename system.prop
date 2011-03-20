@@ -1,3 +1,151 @@
 #
 # system.prop for mecha
 #
+
+ro.sf.lcd_density=240
+
+debug.fb.rgb565 = 0
+
+#+from QCT Fusion
+rild.libpath=/system/lib/libril-qc-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+persist.rild.ril.bva=0
+persist.rild.ril.ltedr=0
+persist.rild.ril.ltedrtable=max_retries=infinite,10000
+persist.rild.ril.adminAPN=vzwadmin
+DEVICE_PROVISIONED=1
+debug.sf.hw=1
+
+#
+# system props for the cne module
+#
+persist.cne.UseCne=false
+persist.cne.bat.range.low.med=30
+persist.cne.bat.range.med.high=60
+persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml
+persist.cne.loc.policy.user=/system/etc/UserPolicy.xml
+persist.cne.bwbased.rat.sel=false
+persist.cne.snsr.based.rat.mgt=false
+persist.cne.bat.based.rat.mgt=false
+persist.cne.be.ge.sqi.min=0
+persist.cne.be.ge.sqi.max=100
+persist.cne.be.umts.sqi.min=0
+persist.cne.be.umts.sqi.max=100
+persist.cne.be.hspa.sqi.min=0
+persist.cne.be.hspa.sqi.max=100
+persist.cne.be.1x.sqi.min=0
+persist.cne.be.1x.sqi.max=100
+persist.cne.be.do.sqi.min=0
+persist.cne.be.do.sqi.max=100
+persist.cne.be.wlan.sqi.min=0
+persist.cne.be.wlan.sqi.max=100
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data_netmgrd_nint=16
+persist.data_netmgrd_mtu=1428
+
+#
+# system props for telephony modules
+#
+#device supports LTE
+ro.config.lte=true
+#device supports EHRPD
+ro.config.ehrpd=true
+#device supports simultaneous 1x voice + LTE
+ro.config.svlte1x=true
+#-from QCT Fusion
+
+# Default network type.
+# 8 => CDMA/EVDO/LTE auto mode preferred.
+ro.telephony.default_network=8
+
+wifi.interface=eth0
+wifi.supplicant_scan_interval=15
+
+# The OpenGL ES API level that is natively supported by this device.
+# This is a 16.16 fixed point number
+ro.opengles.version = 131072
+
+# This is a high density device with more memory, so larger vm heaps for it.
+dalvik.vm.heapsize=24m
+
+# For the default value of agps
+ro.ril.def.agps.mode = 2
+
+# For emmc phone storage
+ro.phone_storage = 0
+
+#
+# This file describes the media capabilities and profiles
+# using system properties.
+#
+# Note:    The property key and value has some length
+#          limit as defined by PROPERTY_KEY_MAX and
+#          PROPERTY_VALUE_MAX, respectively
+#
+# WARNING: We may not use system properties for specifying
+#          media capabilities and profiles in the future
+#
+ro.media.enc.file.format       = 3gp,mp4
+ro.media.enc.vid.codec         = m4v,h263,h264
+ro.media.enc.vid.h263.width    = 176,1280
+ro.media.enc.vid.h263.height   = 144,720
+ro.media.enc.vid.h263.bps      = 64000,6000000
+ro.media.enc.vid.h263.fps      = 1,30
+ro.media.enc.vid.m4v.width     = 176,1280
+ro.media.enc.vid.m4v.height    = 144,720
+ro.media.enc.vid.m4v.bps       = 64000,6000000
+ro.media.enc.vid.m4v.fps       = 1,30
+ro.media.enc.vid.h264.width     = 176,1280
+ro.media.enc.vid.h264.height    = 144,720
+ro.media.enc.vid.h264.bps       = 64000,6000000
+ro.media.enc.vid.h264.fps       = 1,30
+
+# For FOTA setting (leave empty value to use default)
+ro.htc.checkin.url = http://andchin.htc.com/android/checkin
+ro.htc.checkin.crashurl = http://andchin.htc.com/android/crash
+ro.htc.checkin.url_CN = http://andchin.htccomm.com.cn/android/checkin
+ro.htc.checkin.crashurl_CN = http://andchin.htccomm.com.cn/android/crash
+ro.htc.checkin.exmsg.url = http://fotamsg.htc.com/android/extra/
+ro.htc.checkin.exmsg.url_CN = http://fotamsg.htccomm.com.cn/android/extra/
+ro.config.htc.nocheckin = 1
+
+# Release Bluetooth HW/SW information
+ro.bt.chipset	= Broadcom BCM4329-B1
+ro.bt.version	= Bluetooth 2.1 + EDR
+ro.bt.stack	= Broadcom BTL-A
+ro.bt.stack.version	= 2.0.50.032
+#0x10000010010100101000011 represent bt profile list
+ro.bt.profiles	= 4270403
+
+# Properties of BTLA stack
+service.brcm.bt.activation = 0
+service.brcm.bt.srv_active = 0
+service.brcm.bt.hcid_active = 0
+service.brcm.bt.btld = 0
+service.brcm.bt.btld_pid = 0
+service.brcm.bt.avrcp_pass_thru = 0
+service.brcm.bt.avrcp_toggle = 1
+service.brcm.bt.btport_redir_on = 1
+
+#Welly_Fang
+ro.cdma.home.operator.numeric = 310012
+ro.cdma.home.operator.alpha = Verizon
+ro.htc.device.slot1 = RUIM
+
+# jerry.pj_chen [Start]20100730 For Verizon data retry
+ro.cdma.data_retry_config = max_retries=infinite,0,0,60000,120000,480000,900000
+ro.com.android.dataroaming = true
+# jerry.pj_chen [end]20100730 For Verizon data retry
