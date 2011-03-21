@@ -4,20 +4,12 @@ on emmc
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
-	devwait emmc@system
-	# exec /system/bin/e2fsck_recvy -p emmc@system
-	mount ext3 emmc@system /system ro data=ordered
-    devwait emmc@userdata
-	exec /system/bin/e2fsck_recvy -p emmc@userdata
-	mount ext3 emmc@userdata /data nosuid nodev data=ordered
-    devwait emmc@cache
-	exec /system/bin/e2fsck_recvy -p emmc@cache
-	mount ext3 emmc@cache /cache nosuid nodev data=ordered
-    devwait emmc@devlog
-	exec /system/bin/e2fsck_recvy -p emmc@devlog
-	mount ext3 emmc@devlog /devlog nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p25 /system ro wait data=ordered
+    mount ext3 /dev/block/mmcblk0p26 /data wait nosuid nodev data=ordered 
+    mount ext3 /dev/block/mmcblk0p27 /cache wait nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p29 /devlog wait nosuid nodev data=ordered
 
-on early-init
+#on early-init
     device mtd@misc 0460 radio diag
 
 on init
