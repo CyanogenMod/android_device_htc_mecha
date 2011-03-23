@@ -24,8 +24,13 @@ adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/htc_ebdlogd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/logcat2 ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/lsc_camera ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/netmgrd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/rmt_storage ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/ser2net ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/snd3254 ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/qmuxd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/qcrild ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/udhcpd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/xbin/wireless_modem ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
@@ -47,6 +52,9 @@ adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libposteffect.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libping_apps.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libping_lte_rpc.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libping_mdm.so ../../../vendor/htc/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -79,8 +87,13 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
+    vendor/htc/__DEVICE__/proprietary/netmgrd:/system/bin/netmgrd \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
+    vendor/htc/__DEVICE__/proprietary/ser2net:/system/bin/ser2net \\
     vendor/htc/__DEVICE__/proprietary/snd3254:/system/bin/snd3254 \\
+    vendor/htc/__DEVICE__/proprietary/qmuxd:/system/bin/qmuxd \\
+    vendor/htc/__DEVICE__/proprietary/qcrild:/system/bin/qcrild \\
+    vendor/htc/__DEVICE__/proprietary/udhcpd:/system/bin/udhcpd \\
     vendor/htc/__DEVICE__/proprietary/wireless_modem:/system/xbin/wireless_modem \\
     vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
@@ -100,7 +113,10 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
     vendor/htc/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
-    vendor/htc/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so
+    vendor/htc/__DEVICE__/proprietary/libposteffect.so:/system/lib/libposteffect.so \\
+    vendor/htc/__DEVICE__/proprietary/libping_apps.so:/system/lib/libping_apps.so \\
+    vendor/htc/__DEVICE__/proprietary/libping_lte_rpc.so:/system/lib/libping_lte_rpc.so \\
+    vendor/htc/__DEVICE__/proprietary/libping_mdm.so:/system/lib/libping_mdm.so
 EOF
 
 ./setup-makefiles.sh
