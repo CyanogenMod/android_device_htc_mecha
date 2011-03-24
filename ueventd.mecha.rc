@@ -1,6 +1,11 @@
 /dev/system_bus_freq    0660    system      system
 /dev/cpu_dma_latency    0660    system      system
 
+/dev/oncrpc/*               0660   radio     system
+/dev/smdcntl0           0640    radio       radio
+/dev/smdcntl1           0640    radio       radio
+/dev/smdcntl2           0640    radio       radio
+
 /dev/msm_vidc_reg       0660    system      audio
 /dev/msm_vidc_dec       0660    system      audio
 /dev/msm_vidc_enc       0660    system      audio

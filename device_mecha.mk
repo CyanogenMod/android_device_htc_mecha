@@ -15,7 +15,16 @@ $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.oem.ecclist=112,911 \
+    ro.ril.enable.a52=0 \
+    ro.ril.enable.a53=1 \
+    ro.ril.def.agps.mode=6 \
     ro.com.google.clientidbase=android-htc \
+    ro.com.google.clientidbase.yt=android-htc \
+    ro.com.google.clientidbase.am=android-verizon \
+    ro.com.google.clientidbase.vs=android-verizon \
+    ro.com.google.clientidbase.gmm=android-verizon \
+    ro.com.google.clientidbase.ms=android-verizon \
     ro.com.google.networklocation=1 \
     ro.com.google.gmsversion=2.2_r8 \
     ro.setupwizard.enable_bypass=1 \
@@ -41,7 +50,8 @@ PRODUCT_COPY_FILES += \
 # gsm config xml file
 PRODUCT_COPY_FILES += \
     device/htc/mecha/spn-conf.xml:system/etc/spn-conf.xml \
-    device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml
+    device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
+    device/htc/mecha/ser2net.conf:system/etc/ser2net.conf
 
 PRODUCT_PACKAGES += \
     librs_jni \
@@ -69,9 +79,12 @@ PRODUCT_COPY_FILES += \
 # Firmware
 PRODUCT_COPY_FILES += \
     device/htc/mecha/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+    device/htc/mecha/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+    device/htc/mecha/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
     device/htc/mecha/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/mecha/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/mecha/firmware/default_mfg.acdb:system/etc/firmware/default_mfg.acdb \
+    device/htc/mecha/firmware/mp2_dec_mc.fw:system/etc/firmware/mp2_dec_mc.fw \
     device/htc/mecha/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
     device/htc/mecha/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
     device/htc/mecha/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
@@ -114,9 +127,22 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/dsp/soundimage/Sound_Latin.txt:system/etc/soundimage/Sound_Latin.txt \
     device/htc/mecha/dsp/soundimage/Sound_New_Age.txt:system/etc/soundimage/Sound_New_Age.txt \
     device/htc/mecha/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Original_BCLK.txt:system/etc/soundimage/Sound_Original_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Original_Recording_BCLK.txt:system/etc/soundimage/Sound_Original_Recording_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Original_SPK_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Original_HP.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP_BCLK.txt:system/etc/soundimage/Sound_Original_HP_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Original_REC.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC_BCLK.txt:system/etc/soundimage/Sound_Original_REC_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Original_SPK_BCLK.txt \
     device/htc/mecha/dsp/soundimage/Sound_Piano.txt:system/etc/soundimage/Sound_Piano.txt \
     device/htc/mecha/dsp/soundimage/Sound_Pop.txt:system/etc/soundimage/Sound_Pop.txt \
     device/htc/mecha/dsp/soundimage/Sound_R_B.txt:system/etc/soundimage/Sound_R_B.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Recording_BCLK.txt:system/etc/soundimage/Sound_Recording_BCLK.txt \
     device/htc/mecha/dsp/soundimage/Sound_Rock.txt:system/etc/soundimage/Sound_Rock.txt \
     device/htc/mecha/dsp/soundimage/Sound_SRS_A_HP.txt:system/etc/soundimage/Sound_SRS_A_HP.txt \
     device/htc/mecha/dsp/soundimage/Sound_SRS_A_SPK.txt:system/etc/soundimage/Sound_SRS_A_SPK.txt \
@@ -125,40 +151,6 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/dsp/soundimage/Sound_Treble_Booster.txt:system/etc/soundimage/Sound_Treble_Booster.txt \
     device/htc/mecha/dsp/soundimage/Sound_Vocal_Booster.txt:system/etc/soundimage/Sound_Vocal_Booster.txt
 
-# Additional NAM Audio DSP Profiles to NAM Package
-PRODUCT_COPY_FILES += \
-    device/htc/mecha/nam/CodecDSPID.txt:system/etc/nam/CodecDSPID.txt \
-    device/htc/mecha/nam/Sound_Treble_Booster_MCLK.txt:system/etc/nam/Sound_Treble_Booster_MCLK.txt \
-    device/htc/mecha/nam/Sound_Vocal_Booster_MCLK.txt:system/etc/nam/Sound_Vocal_Booster_MCLK.txt \
-    device/htc/mecha/nam/Sound_SRS_A_SPK_MCLK.txt:system/etc/nam/Sound_SRS_A_SPK_MCLK.txt \
-    device/htc/mecha/nam/Sound_SRS_V_HP_MCLK.txt:system/etc/nam/Sound_SRS_V_HP_MCLK.txt \
-    device/htc/mecha/nam/Sound_SRS_V_SPK_MCLK.txt:system/etc/nam/Sound_SRS_V_SPK_MCLK.txt \
-    device/htc/mecha/nam/Sound_Jazz_MCLK.txt:system/etc/nam/Sound_Jazz_MCLK.txt \
-    device/htc/mecha/nam/Sound_Latin_MCLK.txt:system/etc/nam/Sound_Latin_MCLK.txt \
-    device/htc/mecha/nam/Sound_New_Age_MCLK.txt:system/etc/nam/Sound_New_Age_MCLK.txt \
-    device/htc/mecha/nam/Sound_Original_MCLK.txt:system/etc/nam/Sound_Original_MCLK.txt \
-    device/htc/mecha/nam/Sound_Piano_MCLK.txt:system/etc/nam/Sound_Piano_MCLK.txt \
-    device/htc/mecha/nam/Sound_Pop_MCLK.txt:system/etc/nam/Sound_Pop_MCLK.txt \
-    device/htc/mecha/nam/Sound_R_B_MCLK.txt:system/etc/nam/Sound_R_B_MCLK.txt \
-    device/htc/mecha/nam/Sound_Rock_MCLK.txt:system/etc/nam/Sound_Rock_MCLK.txt \
-    device/htc/mecha/nam/Sound_SRS_A_HP_MCLK.txt:system/etc/nam/Sound_SRS_A_HP_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dualmic_SPK_MCLK.txt:system/etc/nam/Sound_Dualmic_SPK_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dualmic_EP_MCLK.txt:system/etc/nam/Sound_Dualmic_EP_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dualmic_MCLK.txt:system/etc/nam/Sound_Dualmic_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dolby_A_SPK_MCLK.txt:system/etc/nam/Sound_Dolby_A_SPK_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dolby_HP_MCLK.txt:system/etc/nam/Sound_Dolby_HP_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dolby_Spk_MCLK.txt:system/etc/nam/Sound_Dolby_Spk_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dolby_V_HP_MCLK.txt:system/etc/nam/Sound_Dolby_V_HP_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dolby_V_SPK_MCLK.txt:system/etc/nam/Sound_Dolby_V_SPK_MCLK.txt \
-    device/htc/mecha/nam/Sound_Dolby_A_HP_MCLK.txt:system/etc/nam/Sound_Dolby_A_HP_MCLK.txt \
-    device/htc/mecha/nam/Sound_Bass_Booster_MCLK.txt:system/etc/nam/Sound_Bass_Booster_MCLK.txt \
-    device/htc/mecha/nam/Sound_Blues_MCLK.txt:system/etc/nam/Sound_Blues_MCLK.txt \
-    device/htc/mecha/nam/Sound_Classical_MCLK.txt:system/etc/nam/Sound_Classical_MCLK.txt \
-    device/htc/mecha/nam/Sound_Country_MCLK.txt:system/etc/nam/Sound_Country_MCLK.txt
-
-# Alternate NAM gps.conf to NAM package
-PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/nam/gps.conf
-    
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -181,7 +173,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/mecha/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko
 
 $(call inherit-product, build/target/product/full_base.mk)
 
