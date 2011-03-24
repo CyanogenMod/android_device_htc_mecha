@@ -164,7 +164,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/mecha/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko
 
 $(call inherit-product, build/target/product/full_base.mk)
 
