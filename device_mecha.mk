@@ -15,7 +15,16 @@ $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.oem.ecclist=112,911 \
+    ro.ril.enable.a52=0 \
+    ro.ril.enable.a53=1 \
+    ro.ril.def.agps.mode=6 \
     ro.com.google.clientidbase=android-htc \
+    ro.com.google.clientidbase.yt=android-htc \
+    ro.com.google.clientidbase.am=android-verizon \
+    ro.com.google.clientidbase.vs=android-verizon \
+    ro.com.google.clientidbase.gmm=android-verizon \
+    ro.com.google.clientidbase.ms=android-verizon \
     ro.com.google.networklocation=1 \
     ro.com.google.gmsversion=2.2_r8 \
     ro.setupwizard.enable_bypass=1 \
