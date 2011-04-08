@@ -24,3 +24,6 @@
 
 /dev/radio_feedback     0660    radio       radio
 /dev/smd9               0600    system      system
+
+/dev/kgsl-2d0           0666    root        root
+/dev/kgsl-3d0           0666    root        root
