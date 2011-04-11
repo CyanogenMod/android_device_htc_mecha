@@ -45,9 +45,9 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := bcm4329
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
 WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 
 #Audio related defines
@@ -65,6 +65,7 @@ BOARD_EGL_CFG := device/htc/mecha/egl.cfg
 
 BOARD_CAMERA_USE_GETBUFFERINFO := true
 BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_USE_REVERSE_FFC := true
 BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 
 #Board FM radio defines
@@ -75,14 +76,13 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 # AMSS version to use for GPS
 BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
 BOARD_USES_QCOM_GPS := true
+BOARD_USES_QCOM_LIBRPC := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := mecha
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
 
-# Use PMEM for gralloc
-BOARD_USE_QCOM_PMEM := true
 BOARD_USES_QCOM_LIBS := true
 
 # cat /proc/emmc
