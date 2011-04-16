@@ -61,7 +61,9 @@ PRODUCT_PACKAGES += \
     sensors.mecha \
     gralloc.msm7x30 \
     overlay.default \
-    gps.mecha
+    gps.mecha \
+    libOmxCore \
+    libOmxVenc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
