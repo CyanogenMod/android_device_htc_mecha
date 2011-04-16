@@ -29,7 +29,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.gmsversion=2.2_r8 \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.dexopt-flags=m=y
+    dalvik.vm.dexopt-flags=m=y \
+    ro.cdma.home.operator.numeric = 310012 \
+    ro.cdma.home.operator.alpha = Verizon
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/mecha/overlay
 
@@ -59,10 +61,7 @@ PRODUCT_PACKAGES += \
     sensors.mecha \
     gralloc.msm7x30 \
     overlay.default \
-    gps.mecha \
-    libOmxCore \
-    libOmxVenc \
-    libOmxVdec
+    gps.mecha
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
