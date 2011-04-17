@@ -73,16 +73,13 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 
-# AMSS version to use for GPS
-BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
-BOARD_USES_QCOM_GPS := true
-BOARD_USES_QCOM_LIBRPC := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := mecha
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+# GPS Related Defines
+BOARD_GPS_LIBRARIES := libloc_api libloc_api-rpc libloc_ext
+BOARD_USES_GPSSHIM := true
+BOARD_GPS_NEEDS_XTRA := true
 
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
-
 BOARD_USES_QCOM_LIBS := true
 
 # cat /proc/emmc
