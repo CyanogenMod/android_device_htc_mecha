@@ -25,6 +25,7 @@ adb pull /system/bin/btld ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/dmagent ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/htc_ebdlogd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/ipd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/ip ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/logcat2 ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/lsc_camera ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/netmgrd ../../../vendor/htc/$DEVICE/proprietary
@@ -133,6 +134,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/dmagent:/system/bin/dmagent \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
     vendor/htc/__DEVICE__/proprietary/ipd:/system/bin/ipd \\
+    vendor/htc/__DEVICE__/proprietary/ip:/system/bin/ip \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/netmgrd:/system/bin/netmgrd \\
