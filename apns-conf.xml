@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<apns version="6">
+    <apn carrier="Verizon"
+        mcc="310"
+        mnc="004"
+        apn=""
+        user="*"
+        server="*"
+        password="*"
+        mmsc="http://mms.vtext.com/servlets/mms"
+    />
+     <apn name="Production" 
+         numeric="310012"  
+         mcc="310" 
+         mnc="012"  
+         apn="1" 
+         user="null"  
+         server="null" 
+         password="null" 
+         proxy="null" 
+         port="" 
+         mmsproxy="" 
+         mmsport="" 
+         mmsprotocol="2.0" 
+         mmsc="http://mms.vtext.com/servlets/mms"  
+         type="mms" />
+</apns>

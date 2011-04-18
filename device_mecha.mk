@@ -53,7 +53,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/mecha/spn-conf.xml:system/etc/spn-conf.xml \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
-    device/htc/mecha/ser2net.conf:system/etc/ser2net.conf
+    device/htc/mecha/ser2net.conf:system/etc/ser2net.conf \
+    device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_PACKAGES += \
     librs_jni \
