@@ -73,6 +73,7 @@ ro.telephony.default_network=8
 
 wifi.interface=eth0
 wifi.supplicant_scan_interval=15
+mobiledata.interfaces=rmnet0,rmnet_sdio0,rmnet1,rmnet_sdio1,data,gprs
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
