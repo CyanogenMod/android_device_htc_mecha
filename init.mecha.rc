@@ -24,6 +24,10 @@ on boot
     chown radio system /sys/module/rpcrouter_sdio_xprt/parameters/debug_mask
     #from QCT Fusion
 
+    # Improvements for evdo-b and lte
+    write /proc/sys/net/core/rmem_max  262144
+    write /proc/sys/net/core/wmem_max  262144
+
     #wifi
     mkdir /data/misc 1771 system misc
     mkdir /data/misc/wifi 0770 wifi wifi
