@@ -31,7 +31,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y \
     ro.cdma.home.operator.numeric = 310012 \
-    ro.cdma.home.operator.alpha = Verizon
+    ro.cdma.home.operator.alpha = Verizon \
+    persist.cne.UseCne=true \
+    persist.cne.bat.range.low.med=30 \
+    persist.cne.bat.range.med.high=60 \
+    persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml \
+    persist.cne.loc.policy.user=/system/etc/UserPolicy.xml \
+    persist.cne.bwbased.rat.sel=true \
+    persist.cne.snsr.based.rat.mgt=false \
+    persist.cne.bat.based.rat.mgt=false \
+    persist.cne.be.ge.sqi.min=0 \
+    persist.cne.be.ge.sqi.max=100 \
+    persist.cne.be.umts.sqi.min=0 \
+    persist.cne.be.umts.sqi.max=100 \
+    persist.cne.be.hspa.sqi.min=0 \
+    persist.cne.be.hspa.sqi.max=100 \
+    persist.cne.be.1x.sqi.min=0 \
+    persist.cne.be.1x.sqi.max=100 \
+    persist.cne.be.do.sqi.min=0 \
+    persist.cne.be.do.sqi.max=100 \
+    persist.cne.be.wlan.sqi.min=0 \
+    persist.cne.be.wlan.sqi.max=100
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/mecha/overlay
 
@@ -175,8 +195,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/mecha/modules/sequans_sdio.ko:system/lib/modules/sequans_sdio.ko
+    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 $(call inherit-product, build/target/product/full_base.mk)
 

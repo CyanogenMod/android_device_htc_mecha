@@ -26,36 +26,13 @@ DEVICE_PROVISIONED=1
 debug.sf.hw=1
 
 #
-# system props for the cne module
-#
-persist.cne.UseCne=false
-persist.cne.bat.range.low.med=30
-persist.cne.bat.range.med.high=60
-persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml
-persist.cne.loc.policy.user=/system/etc/UserPolicy.xml
-persist.cne.bwbased.rat.sel=false
-persist.cne.snsr.based.rat.mgt=false
-persist.cne.bat.based.rat.mgt=false
-persist.cne.be.ge.sqi.min=0
-persist.cne.be.ge.sqi.max=100
-persist.cne.be.umts.sqi.min=0
-persist.cne.be.umts.sqi.max=100
-persist.cne.be.hspa.sqi.min=0
-persist.cne.be.hspa.sqi.max=100
-persist.cne.be.1x.sqi.min=0
-persist.cne.be.1x.sqi.max=100
-persist.cne.be.do.sqi.min=0
-persist.cne.be.do.sqi.max=100
-persist.cne.be.wlan.sqi.min=0
-persist.cne.be.wlan.sqi.max=100
-
-#
 # system props for the data modules
 #
 ro.use_data_netmgrd=true
 persist.data_netmgrd_nint=16
 persist.data_netmgrd_mtu=1428
 net.tcp.buffersize.lte = 4096,221184,3461120,4096,221184,3461120
+net.tcp.buffersize.ehrpd = 4094,87380,262144,4096,16384,262144
 net.tcp.buffersize.evdo_b = 4094,87380,262144,4096,16384,262144
 
 #
@@ -74,7 +51,7 @@ ro.config.svlte1x=true
 ro.telephony.default_network=8
 
 wifi.interface=eth0
-wifi.supplicant_scan_interval=15
+wifi.supplicant_scan_interval=30
 mobiledata.interfaces=rmnet0,rmnet_sdio0,rmnet1,rmnet_sdio1,data,gprs
 
 # The OpenGL ES API level that is natively supported by this device.
@@ -124,24 +101,6 @@ ro.htc.checkin.crashurl_CN = http://andchin.htccomm.com.cn/android/crash
 ro.htc.checkin.exmsg.url = http://fotamsg.htc.com/android/extra/
 ro.htc.checkin.exmsg.url_CN = http://fotamsg.htccomm.com.cn/android/extra/
 ro.config.htc.nocheckin = 1
-
-# Release Bluetooth HW/SW information
-ro.bt.chipset	= Broadcom BCM4329-B1
-ro.bt.version	= Bluetooth 2.1 + EDR
-ro.bt.stack	= Broadcom BTL-A
-ro.bt.stack.version	= 2.0.50.032
-#0x10000010010100101000011 represent bt profile list
-ro.bt.profiles	= 4270403
-
-# Properties of BTLA stack
-service.brcm.bt.activation = 0
-service.brcm.bt.srv_active = 0
-service.brcm.bt.hcid_active = 0
-service.brcm.bt.btld = 0
-service.brcm.bt.btld_pid = 0
-service.brcm.bt.avrcp_pass_thru = 0
-service.brcm.bt.avrcp_toggle = 1
-service.brcm.bt.btport_redir_on = 1
 
 #Welly_Fang
 ro.cdma.home.operator.numeric = 310012
