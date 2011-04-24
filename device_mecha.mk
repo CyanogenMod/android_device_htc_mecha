@@ -32,12 +32,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     ro.cdma.home.operator.numeric = 310012 \
     ro.cdma.home.operator.alpha = Verizon \
-    persist.cne.UseCne=true \
+    persist.cne.UseCne=false \
     persist.cne.bat.range.low.med=30 \
     persist.cne.bat.range.med.high=60 \
     persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml \
     persist.cne.loc.policy.user=/system/etc/UserPolicy.xml \
-    persist.cne.bwbased.rat.sel=true \
+    persist.cne.bwbased.rat.sel=false \
     persist.cne.snsr.based.rat.mgt=false \
     persist.cne.bat.based.rat.mgt=false \
     persist.cne.be.ge.sqi.min=0 \
@@ -74,7 +74,8 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/spn-conf.xml:system/etc/spn-conf.xml \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
     device/htc/mecha/ser2net.conf:system/etc/ser2net.conf \
-    device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml
+    device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml \
+    device/htc/mecha/rt_tables:system/etc/iproute2/rt_tables
 
 PRODUCT_PACKAGES += \
     librs_jni \
