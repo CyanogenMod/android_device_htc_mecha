@@ -81,6 +81,7 @@ BOARD_GPS_NEEDS_XTRA := true
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
 BOARD_USES_QCOM_LIBS := true
+BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 
 # cat /proc/emmc
 # dev:        size     erasesize name
