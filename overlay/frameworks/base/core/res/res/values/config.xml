@@ -152,6 +152,7 @@
          tethering on a new interface called "foo2" add <item>"foo\\d"</item> to the array -->
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"rmnet\\d"</item>
+        <item>"rmnet_sdio\\d"</item>
         <item>"eth\\d"</item>
     </string-array>
 
