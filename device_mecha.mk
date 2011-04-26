@@ -157,13 +157,13 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
     device/htc/mecha/dsp/soundimage/Sound_Original_Recording_BCLK.txt:system/etc/soundimage/Sound_Original_Recording_BCLK.txt \
     device/htc/mecha/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Original_SPK_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Original_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP_BCLK.txt:system/etc/soundimage/Sound_Original_HP_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Original_REC.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC_BCLK.txt:system/etc/soundimage/Sound_Original_REC_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Original_SPK_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_HP_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_REC_BCLK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
+    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt \
     device/htc/mecha/dsp/soundimage/Sound_Piano.txt:system/etc/soundimage/Sound_Piano.txt \
     device/htc/mecha/dsp/soundimage/Sound_Pop.txt:system/etc/soundimage/Sound_Pop.txt \
     device/htc/mecha/dsp/soundimage/Sound_R_B.txt:system/etc/soundimage/Sound_R_B.txt \
