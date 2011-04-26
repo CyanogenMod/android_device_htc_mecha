@@ -74,7 +74,7 @@ BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 
 # GPS Related Defines
-BOARD_GPS_LIBRARIES := libloc_api libloc_api-rpc libloc_ext
+BOARD_GPS_LIBRARIES := libloc_api libloc_api-rpc libloc_ext libgpsone_bit_api
 BOARD_USES_GPSSHIM := true
 BOARD_GPS_NEEDS_XTRA := true
 
