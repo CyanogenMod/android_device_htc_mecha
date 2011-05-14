@@ -19,9 +19,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.enable.a52=0 \
     ro.ril.enable.a53=1 \
     ro.ril.def.agps.mode=6 \
-    media.a1026.nsForVoiceRec=0 \
     htc.audio.alt.enable=1 \
-    htc.audio.hac.enable=1 \
+    htc.audio.hac.enable=0 \
     ro.com.google.clientidbase=android-htc \
     ro.com.google.clientidbase.yt=android-htc \
     ro.com.google.clientidbase.am=android-verizon \
@@ -55,6 +54,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.be.do.sqi.max=100 \
     persist.cne.be.wlan.sqi.min=0 \
     persist.cne.be.wlan.sqi.max=100
+    persist.telephony.support_ipv6=true \
+    persist.telephony.support_ipv4=true
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/mecha/overlay
 
@@ -200,6 +201,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+
+# media profiles and capabilities spec
+$(call inherit-product, device/htc/mecha/media_a1026.mk)
+
+# stuff common to all HTC phones
+$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 
