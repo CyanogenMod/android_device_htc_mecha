@@ -45,6 +45,7 @@ adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprie
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/gps.mecha.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
@@ -154,6 +155,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/udhcpd:/system/bin/udhcpd \\
     vendor/htc/__DEVICE__/proprietary/wireless_modem:/system/xbin/wireless_modem \\
     vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
+    vendor/htc/__DEVICE__/proprietary/gps.mecha.so:/system/lib/hw/gps.mecha.so \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
