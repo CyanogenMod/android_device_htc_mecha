@@ -4,10 +4,10 @@ on early-fs
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
-    mount ext3 /dev/block/mmcblk0p25 /system ro wait data=ordered
-    mount ext3 /dev/block/mmcblk0p26 /data wait nosuid nodev data=ordered 
-    mount ext3 /dev/block/mmcblk0p27 /cache wait nosuid nodev data=ordered
-    mount ext3 /dev/block/mmcblk0p29 /devlog wait nosuid nodev data=ordered
+    mount ext4 /dev/block/mmcblk0p25 /system wait ro barrier=1
+    mount ext4 /dev/block/mmcblk0p26 /data wait noatime nosuid nodev barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p27 /cache wait noatime nosuid nodev barrier=1
+    mount ext4 /dev/block/mmcblk0p29 /devlog wait noatime nosuid nodev barrier=1
 
 #on early-init
     device mtd@misc 0460 radio diag
@@ -42,6 +42,7 @@ on boot
     chown system system /sys/class/leds/amber/blink
     chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/flashlight/brightness
 
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
@@ -94,35 +95,10 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     group bluetooth net_bt_admin
     disabled
 
-# for USB internet sharing
-service udhcpd /system/bin/udhcpd
-	disabled
-	oneshot
-
-service netsharing_on /system/bin/netsharing net on
-	disabled
-	oneshot
-
-service netsharing_off /system/bin/netsharing net off
-	disabled
-	oneshot
-
-service netsharing_pass /system/bin/netsharing net_pass on
-	disabled
-	oneshot
-
-service srv_ser2net /system/bin/ser2net -n
-    disabled
-
-on property:service.ser2net.enable=1
-    start srv_ser2net
-
-on property:service.ser2net.enable=0
-    stop srv_ser2net
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
     user root
-    disabled
+
 
 #+from QCT Fusion
 service qmuxd /system/bin/qmuxd
@@ -150,8 +126,7 @@ on property:service.modem.enable=1
 on property:service.modem.enable=0
 	stop modem
 
-on property:ro.emmc=1
-    start rmt_storage
+
 
 service dmagent /system/bin/dmagent -N -P19 -SA -VSY
     socket dmagent stream 660 root radio
