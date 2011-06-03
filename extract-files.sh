@@ -102,6 +102,7 @@ adb pull /system/lib/libdsutils.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsi_netctrl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libnetmgr.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libwebkitaccel.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -126,9 +127,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:obj/lib/libril.so \\
-    vendor/htc/__DEVICE__/proprietary/libloc_api.so:obj/lib/libloc_api.so \\
-    vendor/htc/__DEVICE__/proprietary/libloc_api-rpc.so:obj/lib/libloc_api-rpc.so \\
-    vendor/htc/__DEVICE__/proprietary/libloc_ext.so:obj/lib/libloc_ext.so
+    vendor/htc/__DEVICE__/proprietary/libwebkitaccel.so:obj/lib/libwebkitaccel.so
 
 # All the blobs necessary for mecha
 PRODUCT_COPY_FILES += \\
@@ -214,7 +213,8 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libwms_fusion.so:/system/lib/libwms_fusion.so \\
     vendor/htc/__DEVICE__/proprietary/libwmsts.so:/system/lib/libwmsts.so \\
     vendor/htc/__DEVICE__/proprietary/libwsp.so:/system/lib/libwsp.so \\
-    vendor/htc/__DEVICE__/proprietary/libwsp_jni.so:/system/lib/libwsp_jni.so 
+    vendor/htc/__DEVICE__/proprietary/libwsp_jni.so:/system/lib/libwsp_jni.so \\
+    vendor/htc/__DEVICE__/proprietary/libwebkitaccel.so:/system/lib/libwebkitaccel.so
 EOF
 
 ./setup-makefiles.sh
