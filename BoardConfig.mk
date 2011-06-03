@@ -56,6 +56,8 @@ BOARD_PREBUILT_LIBAUDIO := true
 
 #Use stock libril for now
 TARGET_PROVIDES_LIBRIL := vendor/htc/mecha/proprietary/libril.so
+BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet_sdio0"
+BOARD_HAS_EXTRA_SYS_PROPS := true
 
 #Bluetooth Defines
 BOARD_HAVE_BLUETOOTH := true
@@ -72,11 +74,6 @@ BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
-
-# GPS Related Defines
-BOARD_GPS_LIBRARIES := libloc_api libloc_api-rpc libloc_ext libgpsone_bit_api
-BOARD_USES_GPSSHIM := true
-BOARD_GPS_NEEDS_XTRA := true
 
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
