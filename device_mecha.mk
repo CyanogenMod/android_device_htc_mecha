@@ -20,7 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.enable.a53=1 \
     ro.ril.def.agps.mode=6 \
     htc.audio.alt.enable=1 \
-    htc.audio.hac.enable=0 \
+    htc.audio.hac.enable=1 \
     ro.com.google.clientidbase=android-htc \
     ro.com.google.clientidbase.yt=android-htc \
     ro.com.google.clientidbase.am=android-verizon \
@@ -55,7 +55,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.be.wlan.sqi.min=0 \
     persist.cne.be.wlan.sqi.max=100
     persist.telephony.support_ipv6=true \
-    persist.telephony.support_ipv4=true
+    persist.telephony.support_ipv4=true \
+    persist.camera.shutter.disable=1
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/mecha/overlay
 
@@ -88,7 +89,8 @@ PRODUCT_PACKAGES += \
     gralloc.msm7x30 \
     overlay.default \
     libOmxCore \
-    libOmxVenc
+    libOmxVenc \
+    libOmxVdec
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
