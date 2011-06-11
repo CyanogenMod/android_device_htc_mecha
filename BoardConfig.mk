@@ -39,7 +39,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := mecha
-
+TARGET_SPECIFIC_HEADER_PATH := device/htc/mecha/include
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
@@ -79,6 +79,7 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 BOARD_NO_RGBX_8888 := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_OVERLAY_MINIFICATION_LIMIT := 2
+BOARD_USE_QCOM_PMEM := true
 
 # cat /proc/emmc
 # dev:        size     erasesize name
