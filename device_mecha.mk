@@ -1,4 +1,18 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+#
+# Copyright (C) 2011 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
@@ -55,42 +69,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.be.wlan.sqi.min=0 \
     persist.cne.be.wlan.sqi.max=100
     persist.telephony.support_ipv6=true \
-    persist.telephony.support_ipv4=true \
-    persist.camera.shutter.disable=1
+    persist.telephony.support_ipv4=true
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/mecha/overlay
 
+# Permission xmls
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
+    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml
 
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
-
-# gsm config xml file
+# config xml file
 PRODUCT_COPY_FILES += \
     device/htc/mecha/spn-conf.xml:system/etc/spn-conf.xml \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
-    device/htc/mecha/ser2net.conf:system/etc/ser2net.conf \
     device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml \
-    device/htc/mecha/rt_tables:system/etc/iproute2/rt_tables
+    device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
-    librs_jni \
     lights.mecha \
-    sensors.mecha \
-    gralloc.msm7x30 \
-    overlay.default \
-    libOmxCore \
-    libOmxVenc \
-    libOmxVdec
+    sensors.mecha
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -188,9 +186,6 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_COPY_FILES += \
     device/htc/mecha/vold.fstab:system/etc/vold.fstab
 
-# Kernel modules
-#PRODUCT_COPY_FILES += \
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/mecha/kernel
 else
@@ -202,6 +197,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+
+# common msm7x30 configs
+$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/mecha/media_a1026.mk)
