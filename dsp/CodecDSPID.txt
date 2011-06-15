@@ -1,30 +1,50 @@
-Original,/system/etc/soundimage/Sound_Original.txt
-Original_SPK,/system/etc/soundimage/Sound_Original_SPK.txt
-Original_Recording,/system/etc/soundimage/Sound_Original_Recording.txt
-Recording,/system/etc/soundimage/Sound_Recording.txt
-DualMic_Phone_EP,/system/etc/soundimage/Sound_Dualmic_EP.txt
-DualMic_Phone_SPK,/system/etc/soundimage/Sound_Dualmic_SPK.txt
-Original_Phone,/system/etc/soundimage/Sound_Original.txt
+Header, Mecha_soundeffet_2011_0325
+## Group for phone ##
+Phone_Default,/system/etc/soundimage/Sound_Original.txt
+Phone_Handset_Dualmic,/system/etc/soundimage/Sound_Phone_Original_REC.txt
+Phone_Speaker_Dualmic,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
+Phone_Headset,/system/etc/soundimage/Sound_Phone_Original_HP.txt
 DualMic_Phone,/system/etc/soundimage/Sound_Phone_Original_REC.txt
 DualMic_Phone_SPK,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
-Original_Phone_REC,/system/etc/soundimage/Sound_Phone_Original_REC.txt
-Original_Phone_SPK,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
-Original_Phone_HP,/system/etc/soundimage/Sound_Phone_Original_HP.txt
-Srs_a_hp,/system/etc/soundimage/Sound_SRS_A_HP.txt
-Srs_a_spk,/system/etc/soundimage/Sound_SRS_A_SPK.txt
-Srs_v_hp,/system/etc/soundimage/Sound_SRS_V_HP.txt
-Srs_v_spk,/system/etc/soundimage/Sound_SRS_A_SPK.txt
-Bass Booster,/system/etc/soundimage/Sound_Bass_Booster.txt
-Blues,/system/etc/soundimage/Sound_Blues.txt
-Classical,/system/etc/soundimage/Sound_Classical.txt
-Country,/system/etc/soundimage/Sound_Country.txt
-Jazz,/system/etc/soundimage/Sound_Jazz.txt
-Latin,/system/etc/soundimage/Sound_Latin.txt
-New age,/system/etc/soundimage/Sound_New_Age.txt
-Piano,/system/etc/soundimage/Sound_Piano.txt
-Pop,/system/etc/soundimage/Sound_Pop.txt
-R&B,/system/etc/soundimage/Sound_R_B.txt
-Rock,/system/etc/soundimage/Sound_Rock.txt
-Treble Booster,/system/etc/soundimage/Sound_Treble_Booster.txt
-Vocal Booster,/system/etc/soundimage/Sound_Vocal_Booster.txt
+Recording,/system/etc/soundimage/Sound_Recording.txt
+Original,/system/etc/soundimage/Sound_Original.txt
+
+## Group for playback ## 
+Playback_Default,/system/etc/soundimage/Sound_Original.txt
+Playback_Speaker_Default,/system/etc/soundimage/Sound_Original_SPK.txt
+Playback_A_Headset_SRS,/system/etc/soundimage/Sound_SRS_A_HP.txt
+Playback_A_Speaker_SRS,/system/etc/soundimage/Sound_SRS_A_SPK.txt
+Playback_V_Headset_SRS,/system/etc/soundimage/Sound_SRS_V_HP.txt
+Playback_V_Speaker_SRS,/system/etc/soundimage/Sound_SRS_V_SPK.txt
+Playback_A_EQ_Bass Booster,/system/etc/soundimage/Sound_Bass_Booster.txt
+Playback_A_EQ_Blues,/system/etc/soundimage/Sound_Blues.txt
+Playback_A_EQ_Classical,/system/etc/soundimage/Sound_Classical.txt
+Playback_A_EQ_Country,/system/etc/soundimage/Sound_Country.txt
+Playback_A_EQ_Jazz,/system/etc/soundimage/Sound_Jazz.txt
+Playback_A_EQ_Latin,/system/etc/soundimage/Sound_Latin.txt
+Playback_A_EQ_New age,/system/etc/soundimage/Sound_New_Age.txt
+Playback_A_EQ_Piano,/system/etc/soundimage/Sound_Piano.txt
+Playback_A_EQ_Pop,/system/etc/soundimage/Sound_Pop.txt
+Playback_A_EQ_R&B,/system/etc/soundimage/Sound_R_B.txt
+Playback_A_EQ_Rock,/system/etc/soundimage/Sound_Rock.txt
+Playback_A_EQ_Treble Booster,/system/etc/soundimage/Sound_Treble_Booster.txt
+Playback_A_EQ_Vocal Booster,/system/etc/soundimage/Sound_Vocal_Booster.txt
+
+## Group for recording ##
+Record_Default,/system/etc/soundimage/Sound_Original_Recording.txt
+Record_V_Mono,/system/etc/soundimage/Sound_Recording.txt
+Record_V_IMIC_Landscape_Stereo,
+Record_V_IMIC_Protrait_Stereo,
+Record_A_IMIC_Mono,
+Record_A_EMIC_Mono,
+
+## Group for FM ##
+FM_Headset,
+FM_Speaker,
+
+#################
+SKYPE_Handset,
+SKYPE_Speaker,
+SPYPE_Headset,
+
 
