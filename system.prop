@@ -24,6 +24,7 @@ persist.rild.ril.ltedrtable=max_retries=infinite,10000
 persist.rild.ril.adminAPN=vzwadmin
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
+persist.radio.agps.mode=6
 
 #
 # system props for the data modules
@@ -31,9 +32,9 @@ debug.sf.hw=1
 ro.use_data_netmgrd=true
 persist.data_netmgrd_nint=16
 persist.data_netmgrd_mtu=1428
-net.tcp.buffersize.lte = 4096,221184,3461120,4096,221184,3461120
-net.tcp.buffersize.ehrpd = 4094,87380,262144,4096,16384,262144
-net.tcp.buffersize.evdo_b = 4094,87380,262144,4096,16384,262144
+net.tcp.buffersize.default=4096,87380,110208,4096,16384,110208
+net.tcp.buffersize.evdo_b=4094,87380,262144,4096,16384,262144
+net.tcp.buffersize.lte=4096,221184,3461120,4096,221184,3461120
 
 #
 # system props for telephony modules
@@ -59,7 +60,7 @@ mobiledata.interfaces=rmnet0,rmnet_sdio0,rmnet1,rmnet_sdio1,data,gprs
 ro.opengles.version = 131072
 
 # This is a high density device with more memory, so larger vm heaps for it.
-dalvik.vm.heapsize=24m
+dalvik.vm.heapsize=32m
 
 # For emmc phone storage
 ro.phone_storage = 0

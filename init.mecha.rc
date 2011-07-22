@@ -28,12 +28,26 @@ on boot
     write /proc/sys/net/core/rmem_max  262144
     write /proc/sys/net/core/wmem_max  262144
 
+    # Tweak background writeout
+    write /proc/sys/vm/dirty_expire_centisecs 200
+    write /proc/sys/vm/dirty_background_bytes 1024000
+    write /proc/sys/vm/dirty_bytes 20480000
+    write /proc/sys/vm/highmem_is_dirtyable 1
+
     #wifi
     mkdir /data/misc 1771 system misc
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
+
+    # Permissions for System Server and daemons.
+    chown radio system /sys/module/gpio_event/parameters/phone_call_status
+    chmod 0660 /sys/android_camera2/htcwc
+    chown media system /sys/android_camera2/htcwc
+    chown radio system /sys/camera_led_status/led_ril_status
+    chown system system /sys/camera_led_status/led_wimax_status
+    chown system system /sys/camera_led_status/led_hotspot_status
 
     # Permissions for Liblights.
     chown system system /sys/class/leds/green/brightness
