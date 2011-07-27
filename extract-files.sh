@@ -102,7 +102,6 @@ adb pull /system/lib/libdsutils.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libdsi_netctrl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libnetmgr.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqdp.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libwebkitaccel.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -213,8 +212,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libwms_fusion.so:/system/lib/libwms_fusion.so \\
     vendor/htc/__DEVICE__/proprietary/libwmsts.so:/system/lib/libwmsts.so \\
     vendor/htc/__DEVICE__/proprietary/libwsp.so:/system/lib/libwsp.so \\
-    vendor/htc/__DEVICE__/proprietary/libwsp_jni.so:/system/lib/libwsp_jni.so \\
-    vendor/htc/__DEVICE__/proprietary/libwebkitaccel.so:/system/lib/libwebkitaccel.so
+    vendor/htc/__DEVICE__/proprietary/libwsp_jni.so:/system/lib/libwsp_jni.so
 EOF
 
 ./setup-makefiles.sh
