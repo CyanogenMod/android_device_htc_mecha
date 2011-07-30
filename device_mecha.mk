@@ -48,6 +48,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     ro.cdma.home.operator.numeric = 310012 \
     ro.cdma.home.operator.alpha = Verizon \
+    ro.telephony.call_ring.multiple=false \
     persist.cne.UseCne=false \
     persist.cne.bat.range.low.med=30 \
     persist.cne.bat.range.med.high=60 \
