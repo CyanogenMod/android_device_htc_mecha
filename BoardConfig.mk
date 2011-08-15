@@ -37,6 +37,7 @@ TARGET_BOOTLOADER_BOARD_NAME := mecha
 TARGET_PROVIDES_LIBRIL := vendor/htc/mecha/proprietary/libril.so
 BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet_sdio0"
 BOARD_HAS_EXTRA_SYS_PROPS := true
+USE_IPV6_ROUTE := true
 
 # Additional Camera hacks for mecha
 BOARD_HAVE_HTC_FFC := true
@@ -68,6 +69,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/mecha/kernel
+TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x05200000
 BOARD_PAGE_SIZE := 4096
