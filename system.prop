@@ -91,7 +91,8 @@ ro.media.enc.vid.h264.height    = 144,720
 ro.media.enc.vid.h264.bps       = 64000,6000000
 ro.media.enc.vid.h264.fps       = 1,30
 
-persist.camera.shutter.disable=1
+# Recording Audio Workaround
+ro.camera.sound.disabled=1
 
 # For FOTA setting (leave empty value to use default)
 ro.htc.checkin.url = http://andchin.htc.com/android/checkin
