@@ -4,6 +4,7 @@ Phone_Default,/system/etc/soundimage/Sound_Original.txt
 Phone_Handset_Dualmic,/system/etc/soundimage/Sound_Phone_Original_REC.txt
 Phone_Speaker_Dualmic,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
 Phone_Headset,/system/etc/soundimage/Sound_Phone_Original_HP.txt
+Original_Phone_REC,/system/etc/soundimage/Sound_Phone_Original_REC.txt
 DualMic_Phone,/system/etc/soundimage/Sound_Phone_Original_REC.txt
 DualMic_Phone_SPK,/system/etc/soundimage/Sound_Phone_Original_SPK.txt
 Recording,/system/etc/soundimage/Sound_Recording.txt
