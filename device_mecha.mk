@@ -83,7 +83,6 @@ PRODUCT_COPY_FILES += \
 
 # config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/spn-conf.xml:system/etc/spn-conf.xml \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
     device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml \
     device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
