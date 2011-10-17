@@ -30,14 +30,12 @@ adb pull /system/bin/logcat2 ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/lsc_camera ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/netmgrd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/rild_ims ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/netsharing ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/rmt_storage ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/ser2net ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/snd3254 ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/spkamp ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/qmuxd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/qcrild ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/tc ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/udhcpd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/xbin/wireless_modem ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
@@ -46,9 +44,6 @@ adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/p
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/gps.mecha.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioeq.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
@@ -59,10 +54,6 @@ adb pull /system/lib/libril-qcril-hook-oem.so ../../../vendor/htc/$DEVICE/propri
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libril_ims.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libgpsone_bit_api.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libloc_api-rpc.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libloc_api.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libloc_ext.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
@@ -124,7 +115,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:obj/lib/libril.so \\
-    vendor/htc/__DEVICE__/proprietary/libwebkitaccel.so:obj/lib/libwebkitaccel.so
 
 # All the blobs necessary for mecha
 PRODUCT_COPY_FILES += \\
@@ -138,17 +128,14 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/netmgrd:/system/bin/netmgrd \\
-    vendor/htc/__DEVICE__/proprietary/netsharing:/system/bin/netsharing \\
     vendor/htc/__DEVICE__/proprietary/rild_ims:/system/bin/rild_ims \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
-    vendor/htc/__DEVICE__/proprietary/ser2net:/system/bin/ser2net \\
     vendor/htc/__DEVICE__/proprietary/snd3254:/system/bin/snd3254 \\
+    vendor/htc/__DEVICE__/proprietary/spkamp:/system/bin/spkamp \\
     vendor/htc/__DEVICE__/proprietary/tc:/system/bin/tc \\
     vendor/htc/__DEVICE__/proprietary/btld:/system/bin/btld \\
     vendor/htc/__DEVICE__/proprietary/qmuxd:/system/bin/qmuxd \\
     vendor/htc/__DEVICE__/proprietary/qcrild:/system/bin/qcrild \\
-    vendor/htc/__DEVICE__/proprietary/qcrild:/system/bin/rild \\
-    vendor/htc/__DEVICE__/proprietary/udhcpd:/system/bin/udhcpd \\
     vendor/htc/__DEVICE__/proprietary/wireless_modem:/system/xbin/wireless_modem \\
     vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
     vendor/htc/__DEVICE__/proprietary/gps.mecha.so:/system/lib/hw/gps.mecha.so \\
@@ -157,7 +144,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
-    vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioeq.so:/system/lib/libaudioeq.so \\
     vendor/htc/__DEVICE__/proprietary/libauth.so:/system/lib/libauth.so \\
@@ -171,14 +157,10 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libdsm.so:/system/lib/libdsm.so \\
     vendor/htc/__DEVICE__/proprietary/libgemini.so:/system/lib/libgemini.so \\
     vendor/htc/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
-    vendor/htc/__DEVICE__/proprietary/libgpsone_bit_api.so:/system/lib/libgpsone_bit_api.so \\
     vendor/htc/__DEVICE__/proprietary/libgsdi_exp.so:/system/lib/libgsdi_exp.so \\
     vendor/htc/__DEVICE__/proprietary/libgstk_exp.so:/system/lib/libgstk_exp.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
     vendor/htc/__DEVICE__/proprietary/libidl.so:/system/lib/libidl.so \\
-    vendor/htc/__DEVICE__/proprietary/libloc_api.so:/system/lib/libloc_api.so \\
-    vendor/htc/__DEVICE__/proprietary/libloc_api-rpc.so:/system/lib/libloc_api-rpc.so \\
-    vendor/htc/__DEVICE__/proprietary/libloc_ext.so:/system/lib/libloc_ext.so \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
     vendor/htc/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
     vendor/htc/__DEVICE__/proprietary/libmmgsdilib.so:/system/lib/libmmgsdilib.so \\
